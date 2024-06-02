@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
+import { EventProvider } from "@/context/eventContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        
+      <EventProvider>
       <body className={inter.className}>
-      <Navbar />
+        <Navbar />
         <Banner />
         {children}
-        </body>
+      </body>
+      </EventProvider>
     </html>
   );
 }

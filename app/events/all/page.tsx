@@ -4,11 +4,19 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@radix-ui/react-label';
 import EventCard from '@/components/EventCard';
 import Link from 'next/link';
+import { useEventContext } from '@/context/eventContext';
+
+interface EventDetails {
+  name: string;
+  description: string;
+  date: string;
+}
 
 const Page = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
+  const { setEventDetails } = useEventContext();
   
 const events = [
   {
@@ -75,6 +83,10 @@ const filteredEvents = events.filter(event => {
   return matchesSearch && matchesFromDate && matchesToDate;
 });
 
+const handleEventClick = (event: EventDetails) => {
+  setEventDetails(event);
+};
+
   return (
     <div className='w-full pt-12 pb-20 px-12 grid gap-y-10'>
       <div className='text-lg text-gray-900 font-bold'>
@@ -105,9 +117,11 @@ const filteredEvents = events.filter(event => {
         </div>
         <div className='w-2/3 grid gap-4'>
         {filteredEvents.map((event, index) => (
-              <Link key={index} href={`/events/all/${event.name}`}>
+              <div key={index} onClick={() => handleEventClick(event)}>
+              <Link href={`/events/all/${encodeURIComponent(event.name)}`}>
                 <EventCard name={event.name} description={event.description} date={event.date}/>
               </Link>
+            </div>
             ))}
         </div>
       </div>

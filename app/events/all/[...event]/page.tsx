@@ -1,9 +1,9 @@
 import React from 'react'
 
-const eventPage = () => {
+const eventPage = ({name, description, date}: {name: string, description: string, date: string}) => {
   return (
     <div>
-      all events infor would be presented here!!
+      all events info would be presented here!!
     </div>
   )
 }

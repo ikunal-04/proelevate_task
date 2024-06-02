@@ -5,7 +5,7 @@ import { Label } from '@radix-ui/react-label';
 import EventCard from '@/components/EventCard';
 import Link from 'next/link';
 
-const page = () => {
+const Page = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
@@ -115,4 +115,4 @@ const filteredEvents = events.filter(event => {
   )
 }
 
-export default page
+export default Page

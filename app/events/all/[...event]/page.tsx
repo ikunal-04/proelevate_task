@@ -1,6 +1,6 @@
 import React from 'react'
 
-const eventPage = ({name, description, date}: {name: string, description: string, date: string}) => {
+const EventPage = () => {
   return (
     <div>
       all events info would be presented here!!
@@ -8,4 +8,4 @@ const eventPage = ({name, description, date}: {name: string, description: string
   )
 }
 
-export default eventPage
+export default EventPage

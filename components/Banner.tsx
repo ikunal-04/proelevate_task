@@ -30,7 +30,10 @@ const Banner = () => {
 
             </div>
             <div className="absolute inset-0 grid items-center justify-center">
-                <h1 className="text-orange-500 text-3xl font-bold">headingg!! is here</h1>               
+                <div className='text-center grid gap-2'>
+                    <h1 className="text-gray-900 text-3xl font-bold">Explore Exciting Events</h1>
+                    <h1 className="text-orange-500 text-3xl font-bold">Discover a World of Opportunities Awaited!</h1>
+                </div>
             </div>
         </div>
     </div>

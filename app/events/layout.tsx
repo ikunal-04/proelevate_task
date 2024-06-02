@@ -4,6 +4,7 @@ import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
 import { EventProvider } from "@/context/eventContext";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Navbar />
         <Banner />
         {children}
+        <Toaster />
       </body>
       </EventProvider>
     </html>

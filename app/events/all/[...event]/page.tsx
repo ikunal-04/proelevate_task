@@ -9,7 +9,7 @@ const EventPage: React.FC = () => {
   if (!eventDetails) return null;
 
   return (
-    <div>
+    <div className='p-5 md:p-0'>
       <div className='mt-4 grid justify-center'>
         <div className='flex justify-center'>
           <h1 className='text-2xl font-bold'>{eventDetails.name}</h1>

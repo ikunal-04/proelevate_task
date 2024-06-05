@@ -92,8 +92,8 @@ const handleEventClick = (event: EventDetails) => {
       <div className='text-lg text-gray-900 font-bold'>
         All Events
       </div>
-      <div className='flex gap-8'>
-        <div className='grid gap-6 w-1/3 h-max'>
+      <div className='flex flex-col md:flex-row gap-8'>
+        <div className='grid gap-6 md:w-1/3 h-max'>
             <div className='grid gap-2'>
                 <Label htmlFor='search'>Search Events</Label>
                 <Input id='search' type='text' placeholder='Search Events' value={searchTerm} onChange={handleSearchChange}/>
@@ -102,7 +102,7 @@ const handleEventClick = (event: EventDetails) => {
                 <h1 className='font-semibold'>Filters</h1>
                 <div className='grid gap-4'>
                     <Label>Sort by date</Label>
-                    <div className='flex gap-4'>
+                    <div className='flex flex-col md:flex-row gap-4'>
                         <div>
                             <Label id='from'>From</Label>
                             <Input id='from' type='date' placeholder='Filters' value={fromDate} onChange={handleFromDateChange}/>
@@ -115,7 +115,7 @@ const handleEventClick = (event: EventDetails) => {
                 </div>
             </div>
         </div>
-        <div className='w-2/3 grid gap-4'>
+        <div className='md:w-2/3 grid gap-4'>
         {filteredEvents.map((event, index) => (
               <div key={index} onClick={() => handleEventClick(event)}>
               <Link href={`/events/all/${encodeURIComponent(event.name)}`}>
